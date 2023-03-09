@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字小游戏</title>
+</head>
+
+<body>
+    <script>
+        //获取随机数
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1)) + N
+        }
+        let random = getRandom(1, 10)
+        //设定三次  三次没猜对就直接结束
+        // 设置开关
+        let flag = true
+        for (let i = 0; i <= 3; i++) {
+            let num = +prompt('请输入你猜的数字：')
+            if (num > random) {
+                alert('你猜大了')
+            }
+            else if (num < random) {
+                alert('你猜小了')
+            }
+            else {
+                flag = false
+                alert('你猜对了')
+                break
+            }
+        }
+        if(flag){
+            alert('次数已经用完')  
+        }
+
+    </script>
+</body>
+
+</html>
